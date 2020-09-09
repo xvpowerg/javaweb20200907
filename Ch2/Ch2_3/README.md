@@ -20,3 +20,11 @@ public class TestServlet extends HttpServlet{
 
 }
 ```
+4 複寫doGet 或 doPost方法
+```java
+public class TestServlet extends HttpServlet{
+ public void doGet(HttpServletRequest req,HttpServletResponse resp) {
+	   
+   }
+}
+```
