@@ -1,3 +1,15 @@
+# HttpServletRequest
+只要跟容器相關的
+1. 取得容器資源
+2. 轉換Servlet
+3. 取得Parameter
+4. 取得Session
+# HttpServletResponse
+跟瀏覽器相關的
+1. 輸出畫面
+2. 輸出語系相關
+3. 建立Cookie 
+
 # GET
 | 優點        | 缺點   |  適合情境  |
 | --------   | -----:  | :----:  |
