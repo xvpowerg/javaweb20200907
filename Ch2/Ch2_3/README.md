@@ -1,3 +1,4 @@
+# HttpServlet 說明與建立步驟
 # HttpServletRequest
 只要跟容器相關的
 1. 取得容器資源
