@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--action 後端網址-->
+<!--method 指定傳輸模式-->
+    <form action="Test1Servelt" method="POST">
+       <div> 
+        <h2>基本資料</h2>
+        <h3>帳號密碼</h3>
+        <input type="text" placeholder="請輸入帳號" name="account"/> <br/>
+        <input type="password" placeholder="請輸入密碼" name="password"/> <br/>
+        <h3>目前狀態</h3>
+        單身<input type="radio" name="status" /> 
+        已婚<input type="radio" name="status"/> 
+        一言難盡<input type="radio" name="status"/><br/>
+        <h3>嗜好</h3>
+        <input type="checkbox" name="hobby"/> 音樂
+        <input type="checkbox" name="hobby"/> 電影
+        <input type="checkbox" name="hobby"/> 運動 
+        <br/> 
+        <br/> 
+        <input type="submit" value="確定"/>
+        <input type="button" value="送出">
+        <!--button 等同於 input type="submit" -->
+        <button>送審</button>
+    </form>
+</body>
+</html>
