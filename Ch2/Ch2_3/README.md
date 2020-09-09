@@ -1,3 +1,11 @@
+# GET
+| 優點        | 缺點   |  適合情境  |
+| --------   | -----:  | :----:  |
+| 快         | 安全性低   |  查詢  |
+|          |  最大長度255字元   |  轉換頁面  |
+
+# POST
+
 # 建立TestServlet 建立TestServlet
 ## 使用@WebServlet
 1. 建立類別並加上pacakge
