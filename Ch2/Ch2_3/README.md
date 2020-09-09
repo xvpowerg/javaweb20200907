@@ -2,6 +2,7 @@
 ## 使用@WebServlet
 1. 建立類別並加上pacakge
 ```java
+package tw.com.web;
 public class TestServlet {
 
 }
