@@ -32,4 +32,58 @@ public class TestGetServlet extends HttpServlet {
 </html>
 ```
 3. 執行專案後　點選　傳數字25會顯示`TestGetServlet!25`　
-## 使用GET取值
+## 使用GET 做運算
+1. 新增 TestGetServlet 程式碼 如下:
+```java
+@WebServlet("/TestGetServlet")
+public class TestGetServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		 PrintWriter out =  resp.getWriter();
+		 //getParameter 會回傳字串
+		 //HttpServletRequest 內的getParameter 取得參數
+		 //如果無number參數 不顯示
+		String number =  req.getParameter("number");
+	
+		 if(number != null) {
+			 out.println("TestGetServlet!"+number);
+		 }
+		 //新增部分
+		 String action =   req.getParameter("action");
+		 String n1 =  req.getParameter("n1");
+		 String n2 =  req.getParameter("n2");
+		 
+		 int ans = 0;
+		 if (action!=null && n1 !=null && n2 != null) {
+			 int intN1 = Integer.parseInt(n1);
+			 int intN2 = Integer.parseInt(n2);
+			 
+			 switch(action) {
+				 case "add":
+					 ans = intN1 + intN2;
+					 break;
+			 }
+			 out.println("TestGetServlet!"+ans);
+		 }
+
+	}
+}
+```
+2. index.html新增如下
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 注意不可以 加上/TestGetServlet -->
+		<a href="TestGetServlet?number=25">傳數字25</a> <br/>
+		<a href="TestGetServlet?action=add&n1=20&n2=30">20+30</a>		
+</body>
+</html>
+```
+## 可能的Bug
+
