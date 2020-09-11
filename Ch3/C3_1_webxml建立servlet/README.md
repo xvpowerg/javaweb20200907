@@ -14,3 +14,18 @@ public class TestWebxmlServlet extends HttpServlet{
 2. 將web.xml放置於
 + WebContent
     + WEB-INF
+3. Web.xml新增TestWebxmlServlet如下
+注意 servlet-name與servlet-class 不可對調
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+      <servlet>      
+	     
+      	  <servlet-name>TestWebxml</servlet-name>
+           <servlet-class>tw.com.web.TestWebxmlServlet</servlet-class>
+      </servlet>
+     
+</web-app>
+
+
+```
