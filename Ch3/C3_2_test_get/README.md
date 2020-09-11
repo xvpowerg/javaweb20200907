@@ -86,4 +86,51 @@ public class TestGetServlet extends HttpServlet {
 </html>
 ```
 ## 可能的Bug
+1. 如果getParameter 為null
+2. Integer.parseInt 的參數不是數字
+3. 沒有對應的action
+解決方案如下程式碼:
+```java
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		 PrintWriter out =  resp.getWriter();
+		 //getParameter 會回傳字串
+		 //HttpServletRequest 內的getParameter 取得參數
+		 //如果無number參數 不顯示
+		String number =  req.getParameter("number");
+		//解決null bug
+		 if(number != null) {
+			 out.println("TestGetServlet!"+number);
+		 }
+		 
+		 String action =   req.getParameter("action");
+		 String n1 =  req.getParameter("n1");
+		 String n2 =  req.getParameter("n2");
+		 
+		 int ans = 0;
+		 //解決null bug
+		 if (action!=null && n1 !=null && n2 != null) {
+			 try {
+			 //解決Integer.parseInt 的參數不是數字 bug
+			 //解決沒有對應的action bug
+				 int intN1 = Integer.parseInt(n1);
+				 int intN2 = Integer.parseInt(n2);
+				 
+				 switch(action) {
+					 case "add":
+						 ans = intN1 + intN2;
+						 break;
+					 default:
+					    throw new IllegalArgumentException("action Error!");
+						
+				 }	 
+			 }catch(Exception ex) {
+				 System.out.println("action:"+ex);
+			 }
+			
+			 out.println("TestGetServlet!"+ans);
+		 }
+
+	}
+```
 
