@@ -31,4 +31,5 @@ public class TestGetServlet extends HttpServlet {
 </body>
 </html>
 ```
+3. 執行專案後　點選　傳數字25會顯示`TestGetServlet!25`　
 ## 使用GET取值
