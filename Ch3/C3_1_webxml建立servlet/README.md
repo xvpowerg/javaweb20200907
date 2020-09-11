@@ -27,7 +27,7 @@ public class TestWebxmlServlet extends HttpServlet{
 </web-app>
 ```
 3. Web.xml新增servlet-mapping  指定 url-pattern 所對應的Servlet
-***url-pattern一定要有 / **
+**url-pattern一定要有 / **
 `一個Servlet 可以對應很多個url-pattern,但是url-pattern不可重複`
 `servlet-name 與 url-pattern不可對調 `
 
