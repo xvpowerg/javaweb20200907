@@ -14,18 +14,38 @@ public class TestWebxmlServlet extends HttpServlet{
 2. 將web.xml放置於
 + WebContent
     + WEB-INF
-3. Web.xml新增TestWebxmlServlet如下
+3. Web.xml新增servlet 標籤指定 TestWebxmlServlet如下方式
 `注意 servlet-name與servlet-class 不可對調`
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
       <servlet>      
-	     
       	  <servlet-name>TestWebxml</servlet-name>
            <servlet-class>tw.com.web.TestWebxmlServlet</servlet-class>
       </servlet>
      
 </web-app>
-
-
 ```
+3. Web.xml新增servlet-mapping  指定 url-pattern 所對應的Servlet
+`一個Servlet 可以對應很多個url-pattern,但是url-pattern不可重複`
+如下:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+      <servlet>      
+      	  <servlet-name>TestWebxml</servlet-name>
+           <servlet-class>tw.com.web.TestWebxmlServlet</servlet-class>
+      </servlet>
+      
+      <servlet-mapping>       	
+      	   <servlet-name>TestWebxml</servlet-name>
+      	  	<url-pattern>/TestWebxmlServlet</url-pattern>
+      </servlet-mapping>
+      
+        <servlet-mapping>       	
+      	   <servlet-name>TestWebxml</servlet-name>
+      	  	<url-pattern>/TestWebxml</url-pattern>
+      </servlet-mapping>
+</web-app>
+```
+
