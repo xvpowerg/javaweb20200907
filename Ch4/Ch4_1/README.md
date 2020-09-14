@@ -29,5 +29,8 @@ resp.setContentType("text/html;charset=UTF-8");	//可顯示中文 要在PrintWri
 ```java
  req.getRequestDispatcher("/ErrorPageServlet").forward(req, resp);
 ```
-
-
+# Request 傳遞屬性特性
+`一個Servlet傳給另一個Servlet 如果不傳遞就消失了 像是接力賽`
+```java
+eq.setAttribute("msg", "登入失敗!");
+```
