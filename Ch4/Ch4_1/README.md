@@ -1,4 +1,15 @@
 # 使用Post,Get做登入差異 與顯示中文
+## 大部分的case開發的順序
++ index.html 
++ css 
++ javascript
++ 開始開發後端
++ Servlet 接收前端的資訊
++ Servlet 回應對應的畫面
+
+ 
+
+
 我們使用Chrome工具查看發現
 + 使用Get傳送是使用 Query String parameters 傳送 會顯示在瀏覽器上
 + 使用Post傳送是使用 Form Data 傳送 不會顯示在瀏覽器上 所以相對安全
