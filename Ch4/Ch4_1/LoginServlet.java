@@ -26,7 +26,9 @@ public class LoginServlet extends HttpServlet {
 	
 		@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			 PrintWriter out =  resp.getWriter();
+
+			resp.setContentType("text/html;charset=UTF-8");	//可顯示中文 要在PrintWriter 之前呼叫
+			PrintWriter out =  resp.getWriter();
 			 out.println("doPost!!!");	
 			String acc =  req.getParameter("account");
 			String pass = req.getParameter("password");
