@@ -23,3 +23,11 @@ resp.setContentType("text/html;charset=UTF-8");	//可顯示中文 要在PrintWri
 			 out.println("拉拉拉");	
 ```
 
+# 想將Servlet內容交付給其他Servlet
+請使用 HttpServletRequest物件的 getRequestDispatcher方法如下 `注意網址列不會變化`
+
+```java
+ req.getRequestDispatcher("/ErrorPageServlet").forward(req, resp);
+```
+
+
