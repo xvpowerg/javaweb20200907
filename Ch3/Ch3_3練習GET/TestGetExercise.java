@@ -18,17 +18,27 @@ public class TestGetExercise  extends HttpServlet{
 		PrintWriter out =  resp.getWriter();
 		String count = req.getParameter("count");
 		String line = req.getParameter("line");
+		
+		if (count == null || line == null) {
+			return;
+		}
+		
 		out.print("<HTML>");		
 		out.print("<BODY>");
-		  int countInt = Integer.parseInt(count);
-		  int lineInt =  Integer.parseInt(line);
-		  out.print("<p>");
-			for (int i =1;i<=countInt;i++) {				
-				out.print(i+" ");
-				if (i % lineInt  == 0) {
-					out.print("<br/>");
-				}						
-			}
+		try {
+			 int countInt = Integer.parseInt(count);
+			  int lineInt =  Integer.parseInt(line);
+			  out.print("<p>");
+				for (int i =1;i<=countInt;i++) {				
+					out.print(i+" ");
+					if (i % lineInt  == 0) {
+						out.print("<br/>");
+					}						
+				}
+		}catch(Exception ex) {
+			System.out.println("showPage ex:"+ex);
+		}
+		 
 			out.print("</p>");
 		out.print("</BODY>");
 		out.print("</HTML>");
