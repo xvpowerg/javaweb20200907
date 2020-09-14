@@ -3,8 +3,25 @@
 <head>
 <meta charset="BIG5">
 <title>Insert title here</title>
+	<script>
+	/*document 表示目前HTML
+	  getElementById 表示搜尋目前HTML當中ID是 accId的 將他物件化
+	  accEl.value 取得 id 是 accId物件的value
+	*/
+		function checkPassAndAccount(){
+			var accEl = document.getElementById("accId");			
+			alert("Test!!:"+accEl.value);
+			
+		}
+	
+	</script>
+
 </head>
 <body>
-	
+	  <form action="LoginServlet" method="post">
+	  		<input type="text"  name="account" id="accId" placeholder="帳號"/><br/>
+	    	<input type="password"  name="password" id="passId" placeholder="密碼"/><br/>
+	    	<input type="button" value="確定" onclick="checkPassAndAccount()"/><br/>
+	  </form>
 </body>
 </html>
