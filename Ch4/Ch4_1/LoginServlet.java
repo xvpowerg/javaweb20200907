@@ -27,17 +27,22 @@ public class LoginServlet extends HttpServlet {
 		@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-			resp.setContentType("text/html;charset=UTF-8");	//¥iÅã¥Ü¤¤¤å ­n¦bPrintWriter ¤§«e©I¥s
+			resp.setContentType("text/html;charset=UTF-8");	//å¯é¡¯ç¤ºä¸­æ–‡ è¦åœ¨PrintWriter ä¹‹å‰å‘¼å«
 			PrintWriter out =  resp.getWriter();
 			 out.println("doPost!!!");	
 			String acc =  req.getParameter("account");
 			String pass = req.getParameter("password");
 			
 			if (acc.equals(account) && pass.equals(password)) {
-				 out.println("µn¤J¦¨¥\");	
+				 out.println("ç™»å…¥æˆåŠŸ");	
 			}else {
-				 out.println("µn¤J¥¢±Ñ");
-				 //¥æ¥Iµ¹¨ä¥LServlet°µ¨Æ ¤£·|ÅÜ¤Æºô§}				
+				 out.println("ç™»å…¥å¤±æ•—");
+				 //äº¤ä»˜çµ¦å…¶ä»–Servletåšäº‹ ä¸æœƒè®ŠåŒ–ç¶²å€
+				 //å¯é€éHttpServletRequestå‚³éåƒæ•¸çµ¦ä¸‹ä¸€å€‹Servelt
+				 //Requestå‚³éç‰¹æ€§æ˜¯ä¸€å€‹Servletå‚³çµ¦å¦ä¸€å€‹Servlet
+				 //ä½œæ¥­ å¸³è™ŸéŒ¯èª¤ å¯†ç¢¼éŒ¯èª¤ å¹«æˆ‘åœ¨ErrorPageServlet åšé¡¯ç¤º
+				 //setAttribute(key,value)
+				 req.setAttribute("msg", "ç™»å…¥å¤±æ•—!");
 				 req.getRequestDispatcher("/ErrorPageServlet").forward(req, resp);
 			}
 		}
