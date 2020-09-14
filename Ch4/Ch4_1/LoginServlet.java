@@ -27,16 +27,18 @@ public class LoginServlet extends HttpServlet {
 		@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-			resp.setContentType("text/html;charset=UTF-8");	//å¯é¡¯ç¤ºä¸­æ–‡ è¦åœ¨PrintWriter ä¹‹å‰å‘¼å«
+			resp.setContentType("text/html;charset=UTF-8");	//¥iÅã¥Ü¤¤¤å ­n¦bPrintWriter ¤§«e©I¥s
 			PrintWriter out =  resp.getWriter();
 			 out.println("doPost!!!");	
 			String acc =  req.getParameter("account");
 			String pass = req.getParameter("password");
 			
 			if (acc.equals(account) && pass.equals(password)) {
-				 out.println("ç™»å…¥æˆåŠŸ");	
+				 out.println("µn¤J¦¨¥\");	
 			}else {
-				 out.println("ç™»å…¥å¤±æ•—");
+				 out.println("µn¤J¥¢±Ñ");
+				 //¥æ¥Iµ¹¨ä¥LServlet°µ¨Æ ¤£·|ÅÜ¤Æºô§}				
+				 req.getRequestDispatcher("/ErrorPageServlet").forward(req, resp);
 			}
 		}
 }

@@ -7,10 +7,24 @@
 	/*document 表示目前HTML
 	  getElementById 表示搜尋目前HTML當中ID是 accId的 將他物件化
 	  accEl.value 取得 id 是 accId物件的value
+	  trim() 可移除前後空白
 	*/
 		function checkPassAndAccount(){
-			var accEl = document.getElementById("accId");			
-			alert("Test!!:"+accEl.value);
+			var accEl = document.getElementById("accId");						
+			var passId = document.getElementById("passId");
+			var msg = "";
+			if (accEl.value.trim() ==""){
+				msg = "帳號不可空白"
+			}
+			if (passId.value.trim() ==""){
+				msg+= " 密碼不可空白"
+			}
+			if (msg == ""){
+				login.submit();
+				
+			}else{
+				alert(msg);
+			}
 			
 		}
 	
@@ -18,7 +32,7 @@
 
 </head>
 <body>
-	  <form action="LoginServlet" method="post">
+	  <form action="LoginServlet" name="login" method="post">
 	  		<input type="text"  name="account" id="accId" placeholder="帳號"/><br/>
 	    	<input type="password"  name="password" id="passId" placeholder="密碼"/><br/>
 	    	<input type="button" value="確定" onclick="checkPassAndAccount()"/><br/>
