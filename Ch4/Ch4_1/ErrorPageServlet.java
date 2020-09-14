@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/ErrorPageServlet")
 public class ErrorPageServlet extends HttpServlet {
-	//¥u»İ­nÂĞ¼gdoPost´N¦n ¦]¬°¦¹­¶­±¬O¥ÑLoginServletªºdoPost¤èªkÂà¹L¨Óªº
+	//åªéœ€è¦è¦†å¯«doPostå°±å¥½ å› ç‚ºæ­¤é é¢æ˜¯ç”±LoginServletçš„doPostæ–¹æ³•è½‰éä¾†çš„
 		@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			resp.setContentType("text/html;charset=UTF-8");	//¥iÅã¥Ü¤¤¤å ­n¦bPrintWriter ¤§«e©I¥s
+			resp.setContentType("text/html;charset=UTF-8");	//å¯é¡¯ç¤ºä¸­æ–‡ è¦åœ¨PrintWriter ä¹‹å‰å‘¼å«
 			PrintWriter out =  resp.getWriter();
-			out.println("ErrorPageServlet!!");
+			String msg = (String)req.getAttribute("msg");
+			out.println("ErrorPageServlet!!"+msg);
 		}
 }
