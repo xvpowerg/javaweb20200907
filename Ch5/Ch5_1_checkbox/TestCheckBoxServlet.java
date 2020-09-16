@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/TestCheckBoxServlet")
 public class TestCheckBoxServlet extends HttpServlet{
 	
-
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out =   resp.getWriter();
@@ -20,7 +20,8 @@ public class TestCheckBoxServlet extends HttpServlet{
 		
 		 String[] skills =  req.getParameterValues("skill");
 		//String skillType = req.getParameter("skill");
-		 
+		String[] skillsName =  Tools.getSkillArray(skills);
+		
 		 Map<String,String[]> map = req.getParameterMap();		 
 		 map.forEach(
 				 (k,v)->{
@@ -30,7 +31,13 @@ public class TestCheckBoxServlet extends HttpServlet{
 					 }
 				 });
 		 
-		 for (String v : skills) {
+		 if (skills != null) {
+		     for (String v : skills) {
+			   out.println("skillType:"+v);
+		      }
+		 }
+		 
+		 for (String v : skillsName) {
 			 out.println("skillType:"+v);
 		 }
 		
