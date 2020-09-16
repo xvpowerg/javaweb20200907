@@ -20,7 +20,7 @@
 ```
 
 ## TestCheckBoxServlet如下
-因為checkbox名稱相同,注意取得checkbox所選value時`必須使用HttpServletRequest物件下的getParameterValues`
+因為checkbox名稱相同,注意取得checkbox所選value時`必須使用HttpServletRequest物件下的getParameterValues方法`
 ```java
 @WebServlet("/TestCheckBoxServlet")
 public class TestCheckBoxServlet extends HttpServlet{
