@@ -34,3 +34,5 @@ resp.setContentType("text/html;charset=UTF-8");	//可顯示中文 要在PrintWri
 ```java
 eq.setAttribute("msg", "登入失敗!");
 ```
+# 作業
+ 當帳號錯誤 密碼錯誤 幫我在ErrorPageServlet 做顯示
