@@ -14,6 +14,7 @@ public class TestCheckBoxServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out =   resp.getWriter();
 		out.println("TestCheckBoxServlet!!");
-		
+		String skillType = req.getParameter("skill");
+		out.println("skillType:"+skillType);
 	}
 }
