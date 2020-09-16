@@ -1,5 +1,8 @@
 # 測試Session
 Session 是屬於瀏覽器範圍的Scop
+可用範圍:
+購物車
+登入
 ## Session如何取得
 可呼叫 getSession(create) boolean 參數 如果沒舊Ssession時才會有差異
 * 沒舊Ssession 參數如果為false時 回傳null
