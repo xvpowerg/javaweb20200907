@@ -38,3 +38,16 @@ public class TestCheckBoxServlet extends HttpServlet{
 }
 
 ```
+# HttpServletRequest getParameterMap() 
+此方法會回傳Map<String,String[]>, String 為form的name String[]為所選的數值的value
+案例如下:假設選了0 2 3 
+```java
+		 Map<String,String[]> map = req.getParameterMap();		 
+		 map.forEach(
+				 (k,v)->{
+					 System.out.print(k+":");
+					 for (String value : v) {
+						 System.out.print(value+" "); //輸出skill:0 2 3 
+					 }
+				 });
+```
