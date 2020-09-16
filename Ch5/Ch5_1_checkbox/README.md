@@ -38,7 +38,7 @@ public class TestCheckBoxServlet extends HttpServlet{
 }
 
 ```
-# HttpServletRequest getParameterMap() 
+# HttpServletRequest getParameterMap()  主要用來顯示所有選取的key 與 value 除bug用
 此方法會回傳Map<String,String[]>, String 為form的name String[]為所選的數值的value
 案例如下:假設選了0 2 3 
 ```java
