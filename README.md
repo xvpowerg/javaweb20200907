@@ -11,3 +11,5 @@
    + [Ch3_1_webxml建立servlet](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch3/C3_1_webxml%E5%BB%BA%E7%AB%8Bservlet)
    + [Ch3_2_test_get](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch3/C3_2_test_get)
    + [Ch3_3練習GET](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch3/Ch3_3%E7%B7%B4%E7%BF%92GET)
++Ch4
+   +[Ch4_1使用Post,Get做登入差異 與顯示中文](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch4/Ch4_1)
