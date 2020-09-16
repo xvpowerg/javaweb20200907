@@ -2,6 +2,8 @@ package tw.com.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +34,17 @@ public class LoginServlet extends HttpServlet {
 			 out.println("doPost!!!");	
 			String acc =  req.getParameter("account");
 			String pass = req.getParameter("password");
+			List<String> msgList = new ArrayList<>();
 			
-			if (acc.equals(account) && pass.equals(password)) {
+			if (!account.equals(acc)) {
+				msgList.add("帳號錯誤");
+			}
+			if (!password.equals(pass)) {
+				msgList.add("密碼錯誤");
+			}
+			if (msgList.size() == 0) {
 				 out.println("登入成功");	
-			}else {
+			}else {				
 				 out.println("登入失敗");
 				 //交付給其他Servlet做事 不會變化網址
 				 //可透過HttpServletRequest傳遞參數給下一個Servelt
@@ -43,6 +52,7 @@ public class LoginServlet extends HttpServlet {
 				 //作業 帳號錯誤 密碼錯誤 幫我在ErrorPageServlet 做顯示
 				 //setAttribute(key,value)
 				 req.setAttribute("msg", "登入失敗!");
+				 req.setAttribute("msgList", msgList);
 				 req.getRequestDispatcher("/ErrorPageServlet").forward(req, resp);
 			}
 		}
