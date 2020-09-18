@@ -11,5 +11,7 @@
 2. 如果瀏覽器的Cookie 是開啟的 下次Request 就會將JSESSIONID 帶回給 容器，容器就可使用此ID取得Attribute 
 3. 注意如果容器產生了Session但是瀏覽器忘了JSESSIONID ，Session還是會存於容器，等過了一陣子才會被GC
 4. 要讓容器Session 最快消失的方式 是呼叫invalidate()
-
+## 進一步思考 HttpServletRequest 與 HttpServletResponse
+* HttpServletRequest  是讀取客戶端來得資訊作分析
+* HttpServletResponse 是寫出回傳給瀏覽器做顯示
 
