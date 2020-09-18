@@ -32,8 +32,11 @@ public class Page1Servlet  extends HttpServlet{
 		out.print("<HTML>");
 		out.print("<BODY>");
 		out.print("<form action=\"Page1Servlet\" method=\"post\">");
+		String pTag = "<p>%s:%s</p>";
 		for (Item itemObj :itemList) {			
-			//<input tye="text" name="count">
+			out.print(String.format(pTag, "品名",itemObj.getName()));
+			out.print(String.format(pTag, "金額",itemObj.getPrice()+""));			
+			out.print("<input type=\"text\" name='count' placeholder='請輸入數量' /><br/>");
 		}
 		out.print("<button>確定</button>");
 		out.print("</form>");
