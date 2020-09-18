@@ -9,18 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import tw.com.bean.Item;
+import java.util.ArrayList;
+import java.util.List;
 @WebServlet("/Page1Servlet")
 public class Page1Servlet  extends HttpServlet{
-	//HttpServletRequest  ÂsÄı¾¹Åª¨úÂsÄı¾¹¶Ç°eªº°T®§
-	//HttpServletResponse ¿é¥X¨ìÂsÄı¾¹
+	//HttpServletRequest  ç€è¦½å™¨è®€å–ç€è¦½å™¨å‚³é€çš„è¨Šæ¯
+	//HttpServletResponse è¼¸å‡ºåˆ°ç€è¦½å™¨
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		HttpSession session = req.getSession(false);
+		HttpSession session = req.getSession();
 		String[] items = req.getParameterValues("item");
+		List<Item> itemList = new ArrayList<>(items.length);
+		for (String id : items) {
+			itemList.add(Item.newItem(id));
+		}	
+		session.setAttribute("itemList", itemList);
+
 		
-		//session.setAttribute("item1", "java");
-		System.out.println(session);
-		if (session!= null) session.invalidate();
 	}
 }
