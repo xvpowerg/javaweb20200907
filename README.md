@@ -17,5 +17,5 @@
   + [Ch5_1_checkbox name相同的fomr data](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch5/Ch5_1_checkbox)
   + [Ch5_2_TestSession 測試Session](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch5/Ch5_2_TestSession)
 + Ch6
-  + Ch6_1_HomeWork 簡易購物車](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch6/Ch6_1_HomeWork)
+   + [Ch6_1_HomeWork 簡易購物車](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch6/Ch6_1_HomeWork)
    + [Ch6_2_了解cookie](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch6/Ch6_2_Cookie)
