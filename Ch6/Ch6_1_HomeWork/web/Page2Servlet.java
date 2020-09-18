@@ -14,24 +14,25 @@ import tw.com.bean.Item;
 import java.util.List;
 @WebServlet("/Page2Servlet")
 public class Page2Servlet  extends HttpServlet{
-	//HttpServletRequest  ÂsÄı¾¹Åª¨úÂsÄı¾¹¶Ç°eªº°T®§
-	//HttpServletResponse ¿é¥X¨ìÂsÄı¾¹
+	//HttpServletRequest  ç€è¦½å™¨è®€å–ç€è¦½å™¨å‚³é€çš„è¨Šæ¯
+	//HttpServletResponse è¼¸å‡ºåˆ°ç€è¦½å™¨
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=UTF-8");
 		 PrintWriter out = resp.getWriter();
-		 //¦]¬°Page2Servlet ­t³d±µ¦¬Sessionªº ¦pªG¨S¦³¦¬¨ìÂÂªºsession¡A¦]­n¦^¶Çnull
+		 //å› ç‚ºPage2Servlet è² è²¬æ¥æ”¶Sessionçš„ å¦‚æœæ²’æœ‰æ”¶åˆ°èˆŠçš„sessionï¼Œå› è¦å›å‚³null
 		HttpSession session = req.getSession(false);
 		
 		if (session == null) {
-			out.println("¿ù»~¾Ş§@");
+			out.println("éŒ¯èª¤æ“ä½œ");
 			return;
 		}
-		//¦]¬°  counts»P itemList ªºªø«×¤@¼Ë
-		//counts»P itemList ªº¯Á¤Ş¤]¤@¼Ë
-		//©ó¬O¥i¥H¨Ï¥Î¥H¤U¤è¦¡
+		//å› ç‚º  countsèˆ‡ itemList çš„é•·åº¦ä¸€æ¨£
+		//countsèˆ‡ itemList çš„ç´¢å¼•ä¹Ÿä¸€æ¨£
+		//æ–¼æ˜¯å¯ä»¥ä½¿ç”¨ä»¥ä¸‹æ–¹å¼
 	    String[] counts= req.getParameterValues("count");
 		List<Item> itemList = (List)session.getAttribute("itemList");
+		int sum = 0;
 		for(int i =0;i< counts.length;i++) {
 			 String countStr =  counts[i]==null||counts[i].trim().isEmpty()?
 					 			"0":counts[i].trim();
@@ -40,10 +41,12 @@ public class Page2Servlet  extends HttpServlet{
 					itemList.get(i).setCount(count);
 			 }catch(Exception ex) {
 				 System.out.println(ex);
-			 }		
-			 
-			 
+			 }
+			Item tmpObj =  itemList.get(i);
+			 out.println(tmpObj.getName()+":"+tmpObj.getCount()+":"+tmpObj.total());			  
+			 sum += tmpObj.total();
 		}
+		 out.println("ç¸½é‡‘é¡:"+sum);
 		
 		
 		
