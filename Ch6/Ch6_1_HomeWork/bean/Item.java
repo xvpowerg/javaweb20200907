@@ -30,5 +30,22 @@ public class Item {
 	public int total() {
 		return count * price;
 	}
+	
+	public static Item newItem(String id) {
+		Item item = new Item("",0);
+		switch(id) {
+		case "0":
+			item = new Item("Java",800);
+			break; 
+		case "1":	
+			item = new Item("Python",700);
+			break; 
+		case "2":	
+			item = new Item("Golan",650);
+			break; 	
+		}
+		return item;
+	}
+	
    
 }
