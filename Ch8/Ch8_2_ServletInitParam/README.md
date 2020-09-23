@@ -1,1 +1,21 @@
 # Servlet InitParameter
+可以在web.xml設定專屬的初始化參數，設定方式如下
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+         <servlet>
+         	<servlet-name>TestInitParamServlet</servlet-name>
+         	<servlet-class>tw.com.web.TestInitParamServlet</servlet-class>
+         	<init-param>
+         		<param-name>path</param-name>
+         		<param-value>C:\MyDir</param-value>
+         	</init-param>
+         	<init-param>         	
+	         	<param-name>account</param-name>
+	         	<param-value>qwer</param-value>
+         	</init-param>
+         </servlet>
+</web-app>
+```
