@@ -1,5 +1,5 @@
 # Servlet InitParameter
-可以在web.xml設定專屬的初始化參數，設定方式如下
+## 可以在web.xml設定專屬的初始化參數，設定方式如下
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
@@ -19,7 +19,7 @@
          </servlet>
 </web-app>
 ```
-在Servlet中可使用InitParameter 可呼叫getInitParameter("path"); 取得InitParameter，`注意Servlet的name要設定的跟web.xml有對應關係`案例如下
+## 在Servlet中可使用InitParameter 可呼叫getInitParameter("path"); 取得InitParameter，`注意Servlet的name要設定的跟web.xml有對應關係`案例如下
 ```java
 @WebServlet(name="TestInitParamServlet",urlPatterns = {"/TestInitParamServlet"})
 public class TestInitParamServlet extends HttpServlet {
@@ -34,6 +34,20 @@ public class TestInitParamServlet extends HttpServlet {
 		 System.out.println(account);	 
 		 
 	}
+}
+
+```
+## 可在Servlet中設定InitParameter如下
+* InitParameter的name如果跟web.xml重疊，web.xml為主
+```java
+@WebServlet(name="TestInitParamServlet",urlPatterns = {"/TestInitParamServlet"},
+	initParams= {		
+			@WebInitParam(name="color",value ="red"),
+			@WebInitParam(name="weight",value ="20"),
+			@WebInitParam(name="account",value ="zxcv")
+})
+public class TestInitParamServlet extends HttpServlet {
+	........
 }
 
 ```
