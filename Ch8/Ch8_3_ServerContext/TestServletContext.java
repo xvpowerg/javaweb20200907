@@ -23,5 +23,10 @@ public class TestServletContext extends HttpServlet {
 	application.setAttribute("count", count);
 		PrintWriter out =   resp.getWriter();
 		out.println("count:"+count);
+	
+		String dbAccount = application.getInitParameter("db_account");
+		String dbPass =  application.getInitParameter("db_pass");	
+		System.out.println(dbAccount+":"+dbPass);
 	}
+	
 }
