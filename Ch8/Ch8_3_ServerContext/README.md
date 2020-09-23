@@ -23,3 +23,22 @@ public class TestServletContext extends HttpServlet {
 	}
 }
 ```
+## contextInitParameter
+可針對ServletContext 建立InitParameter
+* 宣告一組web.xml內容如下
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+         <context-param>
+         		<param-name>db_account</param-name>
+         		<param-value>qwer</param-value>
+         </context-param>
+         <context-param>
+         	<param-name>db_pass</param-name>
+         	<param-value>12345</param-value>
+         </context-param>
+</web-app>
+```
+一組context-param就是一組ServletContext的InitParameter
