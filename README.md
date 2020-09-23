@@ -23,3 +23,8 @@
    + [Ch7_1_test_cookie_login 實作cookie登入](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch7/Ch7_1_test_cookie_login)
    + [Ch7_2_test_jsp Jsp基礎](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch7/Ch7_2_test_jsp)
    + [Ch7_3_ServletLivecycle Servlet生命週期](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch7/Ch7_3_ServletLivecycle)
++ Ch8
+   + [Ch8_1_loadOnStartup 容器初始化Servlet](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch8/Ch8_1_loadOnStartup)
+   + [Ch8_2_ServletInitParam 設定Servlet初始參數](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch8/Ch8_2_ServletInitParam)
+   + [Ch8_3_ServerContext Application的域](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch8/Ch8_3_ServerContext)
+   + [Ch8_4_ReceiverMsg 練習](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch8/Ch8_4_ReceiverMsg)
