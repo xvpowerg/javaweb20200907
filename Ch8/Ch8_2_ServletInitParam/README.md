@@ -19,3 +19,21 @@
          </servlet>
 </web-app>
 ```
+在Servlet中可使用 String path = getInitParameter("path"); 取得InitParameter，`注意WwbServlet的name要設定的跟web.xml有對應關係`案例如下
+```java
+@WebServlet(name="TestInitParamServlet",urlPatterns = {"/TestInitParamServlet"})
+public class TestInitParamServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out = resp.getWriter();
+		out.println("TestInitParamServlet!!");
+		 String path = getInitParameter("path");
+		 System.out.println(path);
+		 String account = getInitParameter("account");
+		 System.out.println(account);	 
+		 
+	}
+}
+
+```
