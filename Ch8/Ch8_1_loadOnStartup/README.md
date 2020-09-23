@@ -23,3 +23,7 @@ public class Test1Servlet extends HttpServlet {
 	}
 }
 ```
+## loadOnStartup 編號順序
+* 越小先執行
+* 不支持負數
+* 相同看容器決定順序
