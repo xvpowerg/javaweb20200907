@@ -23,4 +23,9 @@ public class UploadImageServlet extends HttpServlet {
 	
 }
 ```
+# 加上@MultipartConfig就可使用Part，Part可以取得檔案資訊如下
+```java
+Part part = req.getPart("photo");
+		String fileName = part.getSubmittedFileName();
+```
 
