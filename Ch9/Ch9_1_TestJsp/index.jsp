@@ -8,10 +8,15 @@
 </head>
 <body>
 <!-- 只做顯示 -->
-	<% %>
-	<%="產品1" %>
+
+<!--  -->	
+<%!
+int value = 0;
+%>
+
+	<%="產品1" %> 
 	<%=session.getAttribute("price") %>
 	<%=application.getAttribute("title") %>
-	
+	<p>value:<%=++value %></p>
 </body>
 </html>
