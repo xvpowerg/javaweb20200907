@@ -7,17 +7,14 @@ JSP常用標記
 
 <!--我是HTML註解
 
-<%-- 
 Scriptlet 元素
 <%    %> 等同於程式寫在Servelt的doGet doPost
 Expression 元素
 <%=要輸出的元件%> 專門顯示
---%>
-<%-- 
+
 Declaration 元素
 <%!  %> 宣告放在類別層級元素
-Directive 指示元素
-<%-- <%@page  %> --%>
+Directive 指示元素 <%@page  %>
 ```
 ## page contentType
 1 .指定 網頁編碼 
