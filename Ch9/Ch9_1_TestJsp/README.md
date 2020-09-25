@@ -32,3 +32,9 @@ Directive 指示元素 <%@page  %>
 * session 等同於HttpSession
 * pageContext 等同於 PageContext
 
+## pageContext.findAttribute
+findAttribute 依照以下順序去找  Attribute 
+1. page
+2. request
+3. session
+4. application
