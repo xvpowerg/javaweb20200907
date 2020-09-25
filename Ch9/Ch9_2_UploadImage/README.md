@@ -13,4 +13,14 @@
 	 <button>上傳</button>
 	</form>
 ```
-# 
+# 上傳檔案 Servlet
+注意要加上 @MultipartConfig
+範例如下:
+```java
+@MultipartConfig
+@WebServlet("/UploadImageServlet")
+public class UploadImageServlet extends HttpServlet {
+	
+}
+```
+
