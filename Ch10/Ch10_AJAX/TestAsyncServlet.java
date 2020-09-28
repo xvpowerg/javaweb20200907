@@ -2,26 +2,45 @@ package tw.com.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/TestAsyncServlet")
+//asyncSupported = true å•Ÿå‹•éåŒæ­¥,åˆç¨±ç•°æ­¥
+
+@WebServlet(urlPatterns = {"/TestAsyncServlet"},
+asyncSupported = true)
 public class TestAsyncServlet  extends HttpServlet{
+	private ExecutorService service = Executors.newFixedThreadPool(10);
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			resp.setContentType("text/html; charset=UTF8");
-			PrintWriter out =  resp.getWriter();
-			System.out.println("Submit Start!");
-			out.println("¶}©l!!");
-			
-			try {
-				TimeUnit.SECONDS.sleep(10);	
-			}catch(Exception ex) {}
-			out.println("§¹¦¨10¬í¥ô°È");
+			System.out.println("Servlet Start!"+Thread.currentThread().getName());
+			//PrintWriter out =  resp.getWriter();
+			//System.out.println("Submit Start!");
+		AsyncContext ctx = req.startAsync();
+			service.submit(()->{
+				System.out.println("Submit Start!"+Thread.currentThread().getName());
+				try {
+					PrintWriter out = ctx.getResponse().getWriter();
+					out.println("é–‹å§‹!!");				
+					TimeUnit.SECONDS.sleep(10);	
+					out.println("å®Œæˆ10ç§’ä»»å‹™");
+					ctx.complete();
+				}catch(Exception ex) {
+					
+				}
+				
+				
+			});
+
 			
 		}
 		
