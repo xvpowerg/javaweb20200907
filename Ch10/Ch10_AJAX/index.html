@@ -17,12 +17,27 @@
 			
 		}
 	
+		
+		function testAjaxPost(number){
+			const params = new URLSearchParams('number='+number)
+			document.getElementById("msg").innerHTML="<p>請等待...</p>"
+			fetch('TestAsyncServlet',{body:params,method:'POST'}).
+			then(response=>{
+				return response.text()				
+			}).then((text)=>{
+			    document.getElementById("msg").innerHTML=text
+				consloe.log(text)
+			} ).catch((error)=>{ console.log('error'+error)})
+			
+		}
+		
 	</script>
 
 </head>
 <body>
 		
 	<input type="button" value="10秒" onClick="testAjaxGet()">
+	<input type="button" value="5秒" onClick="testAjaxPost('5')">
      <div id="msg"></div>		
 </body>
 </html>
