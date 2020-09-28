@@ -3,10 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!--Asynchronous JavaScript and XML -->
+	<script>
+		function testAjaxGet(){
+			document.getElementById("msg").innerHTML="<p>請等待...</p>"
+			fetch('TestAsyncServlet',{method:'get'}).
+			then(response=>{
+				return response.text()				
+			}).then((text)=>{
+			    document.getElementById("msg").innerHTML=text
+				consloe.log(text)
+			} ).catch((error)=>{ console.log('error'+error)})
+			
+		}
+	
+	</script>
+
 </head>
 <body>
-		<form action="TestAsyncServlet" >
-			<input type="submit" value="10秒">
-		</form>
+		
+	<input type="button" value="10秒" onClick="testAjaxGet()">
+     <div id="msg"></div>		
 </body>
 </html>
