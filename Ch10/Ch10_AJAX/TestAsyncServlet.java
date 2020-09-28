@@ -38,14 +38,28 @@ public class TestAsyncServlet  extends HttpServlet{
 					
 				}
 				
-				
 			});
 
-			
 		}
 		
 		@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+			resp.setContentType("text/html; charset=UTF8");
+			 AsyncContext ctx = req.startAsync();			 
+			 service.submit(()->{
+				 String number = 
+						 ctx.getRequest().getParameter("number");
+				int timeout =  Integer.parseInt(number);
+				System.out.println("timeout:"+timeout);
+				try {
+					PrintWriter out = 
+							ctx.getResponse().getWriter();
+					TimeUnit.SECONDS.sleep(timeout);
+					out.println(timeout+"秒的工作完成了!");
+					ctx.complete();
+				}catch(Exception ex) {
+					
+				}
+			 });		
 		}
 }
