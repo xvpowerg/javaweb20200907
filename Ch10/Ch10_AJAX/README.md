@@ -21,3 +21,8 @@ public class TestAsyncServlet  extends HttpServlet{
 				}
 				
 ```
+# AJAX 是Asynchronous JavaScript and XML 縮寫
+* 可透過JavaScript 在瀏覽器開啟新的執行序發送Request與接收response
+```java
+fetch('TestAsyncServlet',{method:'get'})
+```
