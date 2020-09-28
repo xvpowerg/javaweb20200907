@@ -29,8 +29,8 @@
    + [Ch8_3_ServerContext Application的域](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch8/Ch8_3_ServerContext)
    + [Ch8_4_ReceiverMsg 練習](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch8/Ch8_4_ReceiverMsg)
 + Ch9
-   +[Ch9_1_TestJsp 測試Jsp](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch9/Ch9_1_TestJsp)
-   +[Ch9_2_UploadImage 上傳檔案](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch9/Ch9_2_UploadImage)
+   + [Ch9_1_TestJsp 測試Jsp](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch9/Ch9_1_TestJsp)
+   + [Ch9_2_UploadImage 上傳檔案](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch9/Ch9_2_UploadImage)
 + Ch10 
-   +[Ch9_2_mvc 將UploadImage改為MVC](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch10/Ch9_2_mvc)
-   +[Ch10_AJAX 測試非同步](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch10/Ch10_AJAX)
+   + [Ch9_2_mvc 將UploadImage改為MVC](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch10/Ch9_2_mvc)
+   + [Ch10_AJAX 測試非同步](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch10/Ch10_AJAX)
