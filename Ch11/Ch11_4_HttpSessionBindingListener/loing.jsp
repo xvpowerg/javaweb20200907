@@ -8,7 +8,12 @@
 </head>
 <body>
 	<form action="LoingServlet">
+		<% if (session.getAttribute("account")== null){ %>
 		<input type="text" name="account" /> <button>登入</button>
+		<%}else{ %>
+		<input type="hidden" name="logout" />
+		<button>登出</button>
+		<% }%>
 	</form>
 </body>
 </html>
