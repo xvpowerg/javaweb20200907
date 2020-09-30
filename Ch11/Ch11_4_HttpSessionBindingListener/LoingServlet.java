@@ -16,12 +16,20 @@ public class LoingServlet  extends HttpServlet{
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			// TODO Auto-generated method stub
-				
+			resp.setContentType("text/html;charset=UTF-8");
 			String account  = req.getParameter("account");
+			String logout  = req.getParameter("logout");
 			User user = new User();
 			user.setUserName(account);
-			resp.getWriter().println("account:"+account);
+			
 			HttpSession session = req.getSession();
-			session.setAttribute("account", user);
+			if (session.getAttribute("account") == null) {
+				session.setAttribute("account", user);
+				resp.getWriter().println("account:"+account);
+			}else if(logout != null) {
+				session.removeAttribute("account");
+				resp.getWriter().println("已登出");
+			}
+			
 		}
 }
