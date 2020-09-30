@@ -1,7 +1,30 @@
 package tw.com.bean;
 
-public class User {
+import java.util.List;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
+
+public class User implements HttpSessionBindingListener{
 	private String userName;
+
+	
+	@Override
+	public void valueBound(HttpSessionBindingEvent event) {
+		ServletContext app = 
+				event.getSession().getServletContext();
+		List<User> list = (List<User>)app.getAttribute("userList");
+		list.add(this);
+	}
+
+	@Override
+	public void valueUnbound(HttpSessionBindingEvent event) {
+		ServletContext app = 
+				event.getSession().getServletContext();
+		List<User> list = (List<User>)app.getAttribute("userList");
+		list.remove(this);
+	}
 
 	public String getUserName() {
 		return userName;
