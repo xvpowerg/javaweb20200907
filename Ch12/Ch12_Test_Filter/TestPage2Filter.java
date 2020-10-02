@@ -17,6 +17,7 @@ public class TestPage2Filter implements Filter {
 			ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		System.out.println("TestPage2Filter in....");
+		request.setAttribute("msg", "TestPage2Filter!!!");
 		chain.doFilter(request, response);
 		System.out.println("TestPage2Filter out....");
 	}
