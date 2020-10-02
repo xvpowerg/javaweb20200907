@@ -15,4 +15,12 @@ public class MyProduces {
 		return fruits;
 	}
 	
+	@Produces
+	public List<String> getAnimal(){
+		List<String> fruits = new ArrayList();
+		fruits.add("Dog");
+		fruits.add("Cat");
+		fruits.add("Bear");
+		return fruits;
+	}
 }
