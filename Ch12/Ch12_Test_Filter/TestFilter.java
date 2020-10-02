@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 @WebFilter("/*")
 public class TestFilter implements Filter {
 	private Set<String> set = new HashSet<>();
-	//¥i¥H°µFilterªºªì©l¤Æ
+	//å¯ä»¥åšFilterçš„åˆå§‹åŒ–
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		set.add("/Page1Servlet");
@@ -34,11 +34,11 @@ public class TestFilter implements Filter {
 		 String path = httpRreq.getServletPath();
 		 System.out.println("path:"+path);
 		 if (set.contains(path)) {
-			 //¹LÂo±ø¥ó¤£¦¨¥ßreturn;
-			 chain.doFilter(req, resp);//¥i¥H±±¨î¬O§_Ä~Äò©¹­¶­±¨« 
+			 //éæ¿¾æ¢ä»¶ä¸æˆç«‹return;
+			 
 		 }
-		
-		
+		 chain.doFilter(req, resp);//å¯ä»¥æ§åˆ¶æ˜¯å¦ç¹¼çºŒå¾€é é¢èµ° 
+		 System.out.println("TestFilter doFilter!! out");
 	}
 
 }
