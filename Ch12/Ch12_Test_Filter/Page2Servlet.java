@@ -1,20 +1,28 @@
-package tw.com.web;
+package tw.com.filter;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/Page2Servlet")
-public class Page2Servlet extends HttpServlet {
-		@Override
-		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			// TODO Auto-generated method stub
-			PrintWriter out =  resp.getWriter();
-			String msg = (String)req.getAttribute("msg");
-			out.println("Page2:"+msg);
-		}
+
+@WebFilter("/Page2Servlet")
+public class TestPage2Filter implements Filter {
+
+	@Override
+	public void doFilter(ServletRequest request,
+			ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		System.out.println("TestPage2Filter in....");
+		request.setAttribute("msg", "TestPage2Filter!!!");
+		chain.doFilter(request, response);
+		HttpServletResponse resp =(HttpServletResponse)response;	
+		resp.getWriter().append("append By Filter");
+		System.out.println("TestPage2Filter out....");
+	}
+
 }
