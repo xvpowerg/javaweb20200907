@@ -14,6 +14,7 @@ public class Page2Servlet extends HttpServlet {
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 			PrintWriter out =  resp.getWriter();
-			out.println("Page2");
+			String msg = (String)req.getAttribute("msg");
+			out.println("Page2:"+msg);
 		}
 }
