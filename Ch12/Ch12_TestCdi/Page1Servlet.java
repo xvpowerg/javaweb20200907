@@ -20,11 +20,14 @@ public class Page1Servlet  extends HttpServlet{
 	//新增限定詞
 	@Named("animal")
 	private List<String> fruitList;
+	@Inject
+	Student st;
 			@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 				p1.setName("Android");
 				p1.setPrice(20);
 				System.out.println(p1);	
-				System.out.println(fruitList);				
+				System.out.println(fruitList);		
+				System.out.println(st.getBook());	
 	}
 }
