@@ -20,8 +20,6 @@ public class Page4Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	 PrintWriter out = 	resp.getWriter();
 	 out.println("Page4Servlet Session...:"+tss.getName());
-	 
-	 //±Ò°ÊRequestScope
 	
 	}
 }
