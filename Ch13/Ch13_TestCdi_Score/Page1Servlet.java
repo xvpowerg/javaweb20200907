@@ -18,5 +18,8 @@ public class Page1Servlet extends HttpServlet {
 	 PrintWriter out = 	resp.getWriter();
 	 out.println("Page1Servlet ...");
 	 trs.setName("Howard");
+	 System.out.println("Page1Servlet:"+trs.hashCode());
+	 //啟動RequestScope
+	 req.getRequestDispatcher("/Page2Servlet").forward(req, resp);
 	}
 }
