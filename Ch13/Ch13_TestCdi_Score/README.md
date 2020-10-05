@@ -1,0 +1,46 @@
+## @RequestScoped
+可將物件放置於RequestScoped
+```java
+@RequestScoped
+public class TestRequestScore {
+	private String name = "Empty";
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "TestRequestScore [name=" + name + "]";
+	}
+	
+}
+```
+## @SessionScoped
+可將物件放置於SessionSScoped注意物件必須是Serializable
+```java
+@SessionScoped
+public class TestSessionScoped implements Serializable {
+private String name = "Empty";
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "TestSessionScoped [name=" + name + "]";
+	}
+	
+}
+
+}
+```
