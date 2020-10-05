@@ -1,5 +1,8 @@
 package tw.com.web;
 
+import javax.enterprise.context.RequestScoped;
+
+@RequestScoped
 public class TestRequestScore {
 	private String name = "Empty";
 	
