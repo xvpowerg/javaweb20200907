@@ -42,3 +42,12 @@
 + Ch12
    + [Ch12_TestCdi](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch12/Ch12_TestCdi)
    + [Ch12_Test_Filter](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch12/Ch12_Test_Filter)   
++ Ch13
+   +[Ch13_TestCdi_Scope](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch13/Ch13_TestCdi_Score)
+   +[Ch13_WebJdbc](https://github.com/xvpowerg/javaweb20200907/tree/master/Ch13/Ch13_WebJdbc)
++ Ch14
+   +[Ch14_JDBC_DAO.zip](https://github.com/xvpowerg/javaweb20200907/blob/master/Ch14/Ch14_JDBC_DAO.zip)
+ + Ch15
+   +[Ch14_JDBC_DAO.zip 完成登入](https://github.com/xvpowerg/javaweb20200907/blob/master/Ch15/Ch14_JDBC_DAO.zip)
+   +[Ch15_Test_JAP.zip 測試JPA](https://github.com/xvpowerg/javaweb20200907/blob/master/Ch15/Ch15_Test_JAP.zip)
+ 
