@@ -1,4 +1,4 @@
-#Entity
+# Entity
 * 一個Entity可對應到一組資料表
 * 必須指定@Entity才可為Entity
 * 必須設定@Id指定主鍵
